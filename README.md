@@ -25,6 +25,23 @@ npm run build    # build de produção em dist/
 npm run preview  # pré-visualiza o build
 ```
 
+## Deploy
+
+O build gera um site estático em `dist/`. Como a aplicação é uma SPA, o
+servidor precisa devolver `index.html` para qualquer rota — caso contrário,
+atualizar a página em `/app/catalogo` resulta em 404, já que esse caminho não
+existe como arquivo.
+
+Na Vercel isso é resolvido pelo `vercel.json` incluído no repositório. Em outro
+provedor, configure o equivalente:
+
+| Provedor | Configuração |
+|---|---|
+| Vercel | `vercel.json` com `rewrites` para `/index.html` (já no repositório) |
+| Netlify | `_redirects` com `/* /index.html 200` |
+| Nginx | `try_files $uri $uri/ /index.html;` |
+| Apache | `FallbackResource /index.html` |
+
 ## Contas de demonstração
 
 A tela de acesso permite entrar com um clique em qualquer um dos perfis abaixo.
