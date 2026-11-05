@@ -123,14 +123,14 @@ export default function Login() {
         <div className="relative flex h-full flex-col justify-between p-12 xl:p-14">
           <div>
             <BrandLockup height={40} />
-            <p className="mt-2.5 text-[10.5px] font-bold uppercase tracking-[0.22em] text-navy-400">
+            <p className="mt-2.5 text-[10.5px] font-bold uppercase tracking-[0.22em] text-navy-200">
               Universidade Corporativa
             </p>
           </div>
 
           <div className="max-w-md">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11.5px] font-semibold uppercase tracking-wide text-repara-orange-soft">
-              <Icon name="Sparkles" className="h-3.5 w-3.5" />
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[11.5px] font-semibold uppercase tracking-wide text-white">
+              <Icon name="Sparkles" className="h-3.5 w-3.5 text-repara-orange-soft" />
               Plataforma de educação corporativa
             </span>
             <h1 className="mt-6 text-[34px] font-extrabold leading-[1.12] tracking-tight text-white xl:text-[40px]">

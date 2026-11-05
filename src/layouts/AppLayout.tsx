@@ -48,7 +48,7 @@ function SidebarContent({
           title={settings.companyName}
         >
           <BrandLockup height={30} />
-          <span className="mt-2 block text-[9.5px] font-bold uppercase tracking-[0.2em] text-navy-400">
+          <span className="mt-2 block text-[9.5px] font-bold uppercase tracking-[0.2em] text-navy-200">
             Universidade Corporativa
           </span>
         </Link>
