@@ -724,13 +724,25 @@ export function Tabs({
 export function TableWrap({
   children,
   className,
+  minWidth = 720,
 }: {
   children: React.ReactNode;
   className?: string;
+  /**
+   * Largura mínima da tabela em pixels. Abaixo dela o container rola na
+   * horizontal, em vez de espremer as colunas — comportamento necessário em
+   * telas de celular, onde uma tabela de muitas colunas ficaria ilegível.
+   */
+  minWidth?: number;
 }) {
   return (
-    <div className={cn('overflow-x-auto', className)}>
-      <table className="w-full border-collapse text-left text-[13.5px]">{children}</table>
+    <div className={cn('scrollbar-thin overflow-x-auto', className)}>
+      <table
+        className="w-full border-collapse text-left text-[13.5px]"
+        style={{ minWidth }}
+      >
+        {children}
+      </table>
     </div>
   );
 }

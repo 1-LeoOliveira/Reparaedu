@@ -1,4 +1,4 @@
-import { Link, useNavigate, useParams } from 'react-router-dom';
+﻿import { Link, useNavigate, useParams } from 'react-router-dom';
 import {
   Badge,
   Breadcrumbs,
@@ -70,7 +70,7 @@ export default function EmployeePathDetail() {
         from={path.coverFrom}
         to={path.coverTo}
         className="mb-6 rounded-2xl p-6 sm:p-8"
-        iconClassName="right-8 h-36 w-36"
+        iconClassName="right-8 hidden h-36 w-36 sm:block"
       >
         <div className="relative max-w-3xl">
           <div className="flex flex-wrap items-center gap-2">

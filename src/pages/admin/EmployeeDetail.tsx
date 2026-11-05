@@ -237,7 +237,7 @@ export default function EmployeeDetail() {
       {/* ------------------------------ Histórico ------------------------ */}
       {tab === 'historico' && (
         <Card>
-          <TableWrap>
+          <TableWrap minWidth={840}>
             <thead>
               <tr>
                 <Th>Treinamento</Th>
@@ -350,7 +350,7 @@ export default function EmployeeDetail() {
               description="Este colaborador ainda não concluiu treinamentos com aprovação na avaliação."
             />
           ) : (
-            <TableWrap>
+            <TableWrap minWidth={840}>
               <thead>
                 <tr>
                   <Th>Treinamento</Th>

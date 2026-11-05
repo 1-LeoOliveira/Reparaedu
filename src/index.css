@@ -26,6 +26,31 @@
 }
 
 @layer utilities {
+  /*
+   * Altura de viewport estável no iOS.
+   *
+   * No Safari do iPhone, `100vh` considera a tela sem a barra de endereço, o
+   * que corta o conteúdo e provoca saltos ao rolar. `100dvh` acompanha a
+   * altura real disponível; o `100vh` fica como fallback.
+   */
+  .min-h-viewport {
+    min-height: 100vh;
+  }
+
+  .modal-scroll {
+    max-height: calc(100vh - 12rem);
+  }
+
+  @supports (height: 100dvh) {
+    .min-h-viewport {
+      min-height: 100dvh;
+    }
+
+    .modal-scroll {
+      max-height: calc(100dvh - 12rem);
+    }
+  }
+
   .scrollbar-thin {
     scrollbar-width: thin;
     scrollbar-color: #cbd5e1 transparent;

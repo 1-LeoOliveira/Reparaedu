@@ -284,7 +284,7 @@ export default function Employees() {
             }
           />
         ) : (
-          <TableWrap>
+          <TableWrap minWidth={920}>
             <thead>
               <tr>
                 <Th>Colaborador</Th>

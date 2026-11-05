@@ -17,6 +17,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
+import { useIsMobile } from '@/hooks/useMediaQuery';
 import { formatNumber } from '@/utils/format';
 
 // ---------------------------------------------------------------------------
@@ -241,13 +242,15 @@ export function DepartmentStackChart({
   }>;
   height?: number;
 }) {
+  const isMobile = useIsMobile();
+
   return (
     <ResponsiveContainer width="100%" height={height}>
       <BarChart
         data={data}
         layout="vertical"
         margin={{ top: 4, right: 16, left: 4, bottom: 0 }}
-        barSize={22}
+        barSize={isMobile ? 18 : 22}
       >
         <CartesianGrid stroke={VIZ.grid} horizontal={false} />
         <XAxis type="number" {...axisProps} allowDecimals={false} />
@@ -255,8 +258,8 @@ export function DepartmentStackChart({
           type="category"
           dataKey="label"
           {...axisProps}
-          width={104}
-          tick={{ fill: '#334155', fontSize: 12, fontWeight: 600 }}
+          width={isMobile ? 76 : 104}
+          tick={{ fill: '#334155', fontSize: isMobile ? 10.5 : 12, fontWeight: 600 }}
         />
         <Tooltip content={<ChartTooltip total />} cursor={{ fill: 'rgba(15,23,42,0.035)' }} />
         <Legend content={<LegendContent />} />
@@ -386,13 +389,18 @@ export function RankingBars({
   suffix?: string;
   color?: string;
 }) {
+  // Em telas estreitas o rótulo precisa ceder espaço para a barra, ou não
+  // sobra área suficiente para comparar as grandezas.
+  const isMobile = useIsMobile();
+  const labelLimit = isMobile ? 16 : 34;
+
   return (
     <ResponsiveContainer width="100%" height={height}>
       <BarChart
         data={data}
         layout="vertical"
         margin={{ top: 4, right: 38, left: 4, bottom: 0 }}
-        barSize={16}
+        barSize={isMobile ? 13 : 16}
       >
         <CartesianGrid stroke={VIZ.grid} horizontal={false} />
         <XAxis type="number" {...axisProps} hide />
@@ -401,8 +409,13 @@ export function RankingBars({
           dataKey="label"
           tickLine={false}
           axisLine={false}
-          width={188}
-          tick={{ fill: '#334155', fontSize: 12 }}
+          width={isMobile ? 108 : 188}
+          tick={{ fill: '#334155', fontSize: isMobile ? 10.5 : 12 }}
+          tickFormatter={(value: string) =>
+            String(value).length > labelLimit
+              ? `${String(value).slice(0, labelLimit - 1)}…`
+              : String(value)
+          }
         />
         <Tooltip
           content={<ChartTooltip suffix={suffix} />}

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import {
   Badge,
@@ -251,7 +251,7 @@ export default function DepartmentDetail() {
 
       {tab === 'colaboradores' && (
         <Card>
-          <TableWrap>
+          <TableWrap minWidth={820}>
             <thead>
               <tr>
                 <Th>Colaborador</Th>
@@ -317,7 +317,7 @@ export default function DepartmentDetail() {
 
       {tab === 'treinamentos' && (
         <Card>
-          <TableWrap>
+          <TableWrap minWidth={820}>
             <thead>
               <tr>
                 <Th>Treinamento</Th>

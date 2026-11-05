@@ -30,7 +30,10 @@ export function Toaster() {
   if (toasts.length === 0) return null;
 
   return (
-    <div className="pointer-events-none fixed bottom-5 right-5 z-[60] flex w-[calc(100vw-2.5rem)] max-w-sm flex-col gap-2.5">
+    <div
+      className="pointer-events-none fixed right-4 z-[60] flex w-[calc(100vw-2rem)] max-w-sm flex-col gap-2.5 sm:right-5 sm:w-[calc(100vw-2.5rem)]"
+      style={{ bottom: 'max(1.25rem, env(safe-area-inset-bottom))' }}
+    >
       {toasts.map((item) => {
         const style = config[item.kind];
         return (

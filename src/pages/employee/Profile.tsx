@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   Avatar,
@@ -210,7 +210,7 @@ export default function Profile() {
               subtitle="Todos os treinamentos atribuídos à sua função"
               icon="History"
             />
-            <TableWrap>
+            <TableWrap minWidth={660}>
               <thead>
                 <tr>
                   <Th>Treinamento</Th>

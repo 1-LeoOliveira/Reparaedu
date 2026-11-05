@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { Avatar, Badge, Button, Icon, Toaster } from '@/components/ui';
 import { BrandLockup } from '@/components/Brand';
@@ -524,7 +524,7 @@ export function AppLayout({
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-viewport bg-slate-50">
       {/* Sidebar desktop */}
       <aside className="fixed inset-y-0 left-0 z-30 hidden w-[244px] lg:block">
         <SidebarContent groups={groups} variant={variant} />

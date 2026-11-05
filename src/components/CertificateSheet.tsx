@@ -29,12 +29,24 @@ export function CertificateSheet({ certificate }: { certificate: Certificate }) 
       : `${settings.certificateValidityMonths} meses`;
 
   return (
-    <div className="print-area cert-root">
+    <div className="cert-scroll scrollbar-thin">
+      <div className="print-area cert-root">
       <style>{`
+        /*
+         * Em telas estreitas o documento não é reduzido — a tipografia em cqw
+         * ficaria ilegível. Ele mantém uma largura mínima e o container rola
+         * na horizontal, preservando as proporções do certificado.
+         */
+        .cert-scroll { overflow-x: auto; }
         .cert-root {
           container-type: inline-size;
           width: 100%;
+          min-width: 620px;
           margin-inline: auto;
+        }
+        @media print {
+          .cert-scroll { overflow: visible; }
+          .cert-root { min-width: 0; }
         }
         .cert-sheet {
           position: relative;
@@ -570,6 +582,7 @@ export function CertificateSheet({ certificate }: { certificate: Certificate }) 
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

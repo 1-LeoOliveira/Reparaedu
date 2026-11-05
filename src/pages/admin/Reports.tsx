@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   Badge,
@@ -404,7 +404,7 @@ export default function Reports() {
                 subtitle="Indicadores consolidados por departamento"
                 icon="Table2"
               />
-              <TableWrap>
+              <TableWrap minWidth={880}>
                 <thead>
                   <tr>
                     <Th>Departamento</Th>
@@ -475,7 +475,7 @@ export default function Reports() {
                 />
               }
             />
-            <TableWrap>
+            <TableWrap minWidth={880}>
               <thead>
                 <tr>
                   <Th>#</Th>
@@ -589,7 +589,7 @@ export default function Reports() {
                 subtitle="Participação, conclusão e aproveitamento"
                 icon="GraduationCap"
               />
-              <TableWrap>
+              <TableWrap minWidth={880}>
                 <thead>
                   <tr>
                     <Th>Treinamento</Th>
@@ -672,7 +672,7 @@ export default function Reports() {
                 description="Todos os colaboradores deste recorte estão em conformidade com os prazos."
               />
             ) : (
-              <TableWrap>
+              <TableWrap minWidth={880}>
                 <thead>
                   <tr>
                     <Th>Colaborador</Th>
@@ -781,7 +781,7 @@ export default function Reports() {
                 subtitle="Taxa de aprovação e nota média por treinamento"
                 icon="ClipboardCheck"
               />
-              <TableWrap>
+              <TableWrap minWidth={880}>
                 <thead>
                   <tr>
                     <Th>Treinamento</Th>

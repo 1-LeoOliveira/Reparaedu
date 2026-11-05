@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { cn } from '@/utils/format';
 import { Button, Icon } from './primitives';
 
@@ -86,7 +86,7 @@ export function Modal({
           </button>
         </div>
 
-        <div className="max-h-[calc(100vh-16rem)] overflow-y-auto px-5 py-5">
+        <div className="modal-scroll overflow-y-auto px-4 py-5 sm:px-5">
           {children}
         </div>
 

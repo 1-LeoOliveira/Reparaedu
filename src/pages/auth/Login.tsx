@@ -107,7 +107,7 @@ export default function Login() {
   };
 
   return (
-    <div className="flex min-h-screen bg-slate-50">
+    <div className="flex min-h-viewport bg-slate-50">
       {/* ------------------------- Painel institucional ------------------- */}
       <aside className="relative hidden w-[46%] max-w-[640px] overflow-hidden bg-navy-950 lg:block">
         <div className="absolute inset-0 grid-pattern opacity-70" />

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   Avatar,
@@ -219,7 +219,7 @@ export default function AdminDashboard() {
           <div className="px-3 py-4 sm:px-5">
             <DepartmentStackChart data={analytics.byDepartment} />
           </div>
-          <TableWrap className="border-t border-slate-100">
+          <TableWrap minWidth={560} className="border-t border-slate-100">
             <thead>
               <tr>
                 <Th>Departamento</Th>
@@ -326,7 +326,7 @@ export default function AdminDashboard() {
               </LinkButton>
             }
           />
-          <TableWrap>
+          <TableWrap minWidth={700}>
             <thead>
               <tr>
                 <Th>#</Th>

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import {
   Badge,
@@ -101,7 +101,7 @@ export default function AdminPathDetail() {
       >
         <Icon
           name={path.icon}
-          className="absolute right-8 top-1/2 h-32 w-32 -translate-y-1/2 text-white/15"
+          className="absolute right-8 top-1/2 hidden h-32 w-32 -translate-y-1/2 text-white/15 sm:block"
           strokeWidth={1.3}
         />
         <div className="relative max-w-3xl">
@@ -232,7 +232,7 @@ export default function AdminPathDetail() {
               </div>
             }
           />
-          <TableWrap>
+          <TableWrap minWidth={560}>
             <thead>
               <tr>
                 <Th>Colaborador</Th>

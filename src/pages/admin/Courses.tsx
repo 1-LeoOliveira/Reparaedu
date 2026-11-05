@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
   Avatar,
@@ -233,7 +233,7 @@ export default function AdminCourses() {
         </Card>
       ) : view === 'tabela' ? (
         <Card>
-          <TableWrap>
+          <TableWrap minWidth={920}>
             <thead>
               <tr>
                 <Th>Treinamento</Th>
